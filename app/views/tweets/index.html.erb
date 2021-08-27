@@ -1,19 +1,29 @@
-<p>Home</p>
-<p>Create a tweet</p>
-<div>
+<div class=card>
+  <h1>Home</h1>
+</div>
+<div class="card">
   <%= form_with model: @tweet, url: { action: "create" } do |form| %>
     <%= form.text_area :body %>
     <%= form.submit %>
   <% end %>
 </div>
 <% @tweets.each do |tweet| %>
-  <div>
-    <%= image_tag User.all.find_by(id: tweet.user_id).avatar%>
-    <p><%= User.all.find_by(id: tweet.user_id).username%></p>
-    <span><%= time_ago_in_words(tweet.created_at) unless tweet.created_at.blank? %> ago</span>
-    <p><%= User.all.find_by(id: tweet.user_id).name%></p>
-    <p><%= tweet.body%></p>
-    <p>Comments: <%= tweet.comments_count%></p>
-    <a href="<%=tweet_path(tweet)%>">Details</a>
+  <div class="card">
+    <div>
+     <%= image_tag User.all.find_by(id: tweet.user_id).avatar, class: "card-img"%>
+    </div>
+    <div class="card-contain">
+      <div class="card-main">
+        <p>
+          <%= User.all.find_by(id: tweet.user_id).name%> <span>@<%= User.all.find_by(id: tweet.user_id).username%></span>
+              <span><%= time_ago_in_words(tweet.created_at) unless tweet.created_at.blank? %> ago</span>
+        </p>
+        <p><%= tweet.body%></p>
+      </div>
+      <div class="card-footer">
+        <p>Comments: <%= tweet.comments_count%></p>
+        <a href="<%=tweet_path(tweet)%>">Details</a>
+      </div>
+    </div>
   </div>
 <% end %>

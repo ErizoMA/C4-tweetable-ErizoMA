@@ -14,12 +14,13 @@
  *= require_self
  */
 @import "./global.css";
-@import "./components/button.css";
-@import "./components/cta.css";
-@import "./components/icon.css";
-@import "./components/navbar.css";
-@import "./components/input.css";
-@import "./components/forms.css";
+/* @import "./components/button.css"; */
+/* @import "./components/cta.css"; */
+/* @import "./components/icon.css"; */
+/* @import "./components/navbar.css"; */
+/* @import "./components/input.css"; */
+/* @import "./components/forms.css"; */
+@import "./components/card.css";
 
 /* index.html */
 .headings-container {
@@ -64,7 +65,7 @@
 }
 
 body {
-  background-color: var(--gray-100);
+  background-color: var(--background-2);
   display: flex;
   flex-direction: column;
   max-height: 100vh;

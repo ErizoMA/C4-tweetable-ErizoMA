@@ -11,11 +11,11 @@
 
   <body>
     <div class="container">
-      <header class="header">
+      <header>
         <div>
-        <%= link_to "Login", user_session_path %>
-        <%= link_to "Edit Profile", edit_user_registration_path %>
-        <%= link_to "Logout", destroy_user_session_path ,method: :delete %>
+          <%= link_to "Login", user_session_path %>
+          <%= link_to "Edit Profile", edit_user_registration_path %>
+          <%= link_to "Logout", destroy_user_session_path ,method: :delete %>
         </div>
       </header>
       <main class="main">      
