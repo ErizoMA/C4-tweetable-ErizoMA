@@ -1,0 +1,24 @@
+<p>Tweet detail</p>
+<div>
+  <%= image_tag User.all.find_by(id: @tweet.user_id).avatar%>
+  <p><%= User.all.find_by(id: @tweet.user_id).username%></p>
+  <span><%= time_ago_in_words(@tweet.created_at) unless @tweet.created_at.blank? %> ago</span>
+  <p><%= User.all.find_by(id: @tweet.user_id).name%></p>
+  <p><%= @tweet.body%></p>
+  <p>Comments: <%= @tweet.comments_count%></p>
+</div>
+
+<div>
+  <% @tweet.comments.each do |comment| %>
+    <div>
+      <%= image_tag User.all.find_by(id: comment.user_id).avatar%>
+      <p><%= User.all.find_by(id: comment.user_id).username%></p>
+      <span><%= time_ago_in_words(comment.created_at) unless comment.created_at.blank? %> ago</span>
+      <p><%= User.all.find_by(id: comment.user_id).name%></p>
+      <p><%= comment.body%></p>
+    </div>
+  <% end %>
+
+</div>
+
+

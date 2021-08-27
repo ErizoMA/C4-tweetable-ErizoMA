@@ -6,6 +6,7 @@
     <span><%= time_ago_in_words(tweet.created_at) unless tweet.created_at.blank? %> ago</span>
     <p><%= User.all.find_by(id: tweet.user_id).name%></p>
     <p><%= tweet.body%></p>
-    <p><%= tweet.comments_count%></p>
+    <p>Comments: <%= tweet.comments_count%></p>
+    <a href="<%=tweet_path(tweet)%>">Details</a>
   </div>
 <% end %>
