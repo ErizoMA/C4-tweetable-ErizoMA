@@ -1,4 +1,11 @@
 <p>Home</p>
+<p>Create a tweet</p>
+<div>
+  <%= form_with model: @tweet, url: { action: "create" } do |form| %>
+    <%= form.text_area :body %>
+    <%= form.submit %>
+  <% end %>
+</div>
 <% @tweets.each do |tweet| %>
   <div>
     <%= image_tag User.all.find_by(id: tweet.user_id).avatar%>
