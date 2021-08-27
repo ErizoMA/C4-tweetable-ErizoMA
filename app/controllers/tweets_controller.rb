@@ -1,3 +1,5 @@
 class TweetsController < ApplicationController
-  def index; end
+  def index
+    @tweets = Tweet.all
+  end
 end

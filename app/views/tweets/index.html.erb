@@ -1,2 +1,11 @@
-<h1>Tweets#index</h1>
-<p>Find me in app/views/tweets/index.html.erb</p>
+<p>Home</p>
+<% @tweets.each do |tweet| %>
+  <div>
+    <%= image_tag User.all.find_by(id: tweet.user_id).avatar%>
+    <p><%= User.all.find_by(id: tweet.user_id).username%></p>
+    <span><%= time_ago_in_words(tweet.created_at) unless tweet.created_at.blank? %> ago</span>
+    <p><%= User.all.find_by(id: tweet.user_id).name%></p>
+    <p><%= tweet.body%></p>
+    <p><%= tweet.comments_count%></p>
+  </div>
+<% end %>
