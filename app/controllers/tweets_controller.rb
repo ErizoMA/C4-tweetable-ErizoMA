@@ -8,13 +8,12 @@ class TweetsController < ApplicationController
   end
 
   def new
-    # @tweet = authorize Company.new
     @tweet = Tweet.new
   end
 
   def create
     @tweet = Tweet.new(body: params[:body])
-    @tweet.user = User.first
+    @tweet.user = User.second
 
     if @tweet.save
       redirect_to root_path

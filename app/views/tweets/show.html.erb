@@ -9,6 +9,9 @@
 </div>
 
 <div>
+<p>Create comment</p>
+
+<div>
   <% @tweet.comments.each do |comment| %>
     <div>
       <%= image_tag User.all.find_by(id: comment.user_id).avatar%>
