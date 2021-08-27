@@ -21,8 +21,14 @@
         <p><%= tweet.body%></p>
       </div>
       <div class="card-footer">
-        <p>Comments: <%= tweet.comments_count%></p>
-        <a href="<%=tweet_path(tweet)%>">Details</a>
+        <div class="card-comments">
+          <a href="<%=tweet_path(tweet)%>"><div><%= image_tag('comment.png')%></div></a>
+          <p><%= tweet.comments_count%></p>        
+        </div>
+         <div class="card-controls">
+          <a href="#"><div><%= image_tag('delete.png')%></div></a>
+          <a href="#"><div><%= image_tag('edit.png')%></div></a>
+        </div>
       </div>
     </div>
   </div>
