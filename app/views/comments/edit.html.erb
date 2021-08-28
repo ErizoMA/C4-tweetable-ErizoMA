@@ -1,9 +1,17 @@
-<div class="card">
+<div class="card justify-c">
   <h1>Edit Comment</h1>
 </div>
-<div class="card">
-  <%= form_with model: @comment, url: { action: "update" } do |form| %>
-    <%= form.text_area :body ,placeholder: "Remember to think before write ..." ,class: "user-form" %>
-    <%= form.submit  "Edit",class: "btn btn--primary btn--fit-content" %>
-  <% end %>
+
+ <div class="card">
+    <%= form_with model: @comment, url: { action: "update" } do |form| %>
+    <div class="card-inside center">
+      <div class="txt-left">
+        <p>Body</p>
+      </div>
+      <%= form.text_area :body ,placeholder: "Remember to think before write ..." ,class: "card-ar" %>
+      <%= form.submit  "Edit",class: "btn btn--primary btn--fit-content" %>    
+    </div>
+
+    <% end %> 
 </div>
+
