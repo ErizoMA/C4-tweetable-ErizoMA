@@ -42,8 +42,8 @@
           <%= link_to comment_path(comment), method: :delete, data: { confirm: 'Do you want to delete it?' } do %>
             <%= image_tag "delete.png", alt: "delete" %>
           <% end %>
-          <%= link_to edit_tweet_path(comment) do %>
-            <%= image_tag "edit.png", alt: "edit", class: "ml-12 flex align-end"   %>
+          <%= link_to edit_comment_path(comment) do %>
+            <%= image_tag "edit.png", alt: "edit" %>
           <% end %>
         </div>
       </div>
