@@ -14,7 +14,7 @@ class User < ApplicationRecord
   validates :email, format: { with: VALID_EMAIL_REGEX }, allow_blank: false
   validates :username, presence: true, uniqueness: true
   validates :name, presence: true
-  validates :password, numericality: { greater_than_or_equal_to: 6 }
+  validates :password, length: { minimum: 6 }
 
   # Active Storage
   has_one_attached :avatar
