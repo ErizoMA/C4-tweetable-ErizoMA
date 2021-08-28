@@ -23,6 +23,10 @@
   justify-content: space-between;
   align-items: center;
 }
+.card-footer--end{
+  display: flex;
+  justify-content: flex-end;
+}
 
 .card-comments{
   display: flex;
@@ -41,4 +45,10 @@
   flex-direction: column;
   gap: 8px;
   align-items: center;
+}
+
+.card-area{
+  min-width:510px ;
+  border: none;
+  resize: none;
 }

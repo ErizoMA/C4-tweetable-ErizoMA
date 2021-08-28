@@ -3,12 +3,20 @@
 </div>
 <%if current_user %>
   <div class="card">
+    <%= image_tag current_user.avatar ,class: "card-img"%>
+    <div class="card-contain">
     <%= form_with model: @tweet, url: { action: "create" } do |form| %>
-      <%= form.text_area :body ,placeholder: "Remember to think before write ..." ,class: "user-form" %>
-      <%= form.submit  "Tweet",class: "btn btn--primary btn--fit-content" %>
-    <% end %>
-  </div>  
-<%end %>
+      <div class="card-main">
+        <%= form.text_area :body ,placeholder: "Remember to think before write ...", class: "card-area"%>
+      </div>
+      <div class="card-footer--end">
+       <%= form.submit  "Tweet",class: "btn btn--primary btn--fit-content" %>
+      </div>  
+    </div>   
+    <% end %>       
+  </div>
+<% end %>   
+
 <% @tweets.each do |tweet| %>
   <div class="card">
     <div>
@@ -28,6 +36,8 @@
 
           <p><%= tweet.comments_count%></p>        
         </div>
+        <%if current_user%>
+          <%if current_user.id == tweet.user_id%>
          <div class="card-controls">
           <%= link_to tweet_path(tweet), method: :delete, data: { confirm: 'Do you want to delete it?' } do %>
             <%= image_tag "delete.png", alt: "delete" %>
@@ -36,6 +46,8 @@
             <%= image_tag "edit.png", alt: "edit", class: "ml-12 flex align-end"   %>
           <% end %>
         </div>
+          <%end %>
+        <%end %>
       </div>
     </div>
   </div>
