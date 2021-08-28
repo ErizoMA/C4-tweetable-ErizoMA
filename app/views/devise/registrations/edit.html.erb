@@ -36,7 +36,7 @@
       </div>
 
       <div class="field">
-        <%= f.label :password %>
+        <%= f.label :password %><br />
         <div class="input__container">
           <%= f.password_field :password, autocomplete: "new-password", class: "input__content " %>
         </div>
@@ -48,10 +48,20 @@
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input__content " %> 
         </div>
       </div>
-      <%= render "devise/shared/links" %>
+
+      <div class="field">
+        <%= f.label :current_password %><br />
+        <div class="input__container">
+          <%= f.password_field :current_password, autocomplete: "current-password",class: "input__content " %>
+        </div>
+      </div>
+      <div class="actions">
+        <%= f.submit "Update",class: "btn btn--primary btn--fit-content" %>
+      </div>
+<% end %> 
     <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete , class: "btn btn--primary btn--fit-content"%>
    </div> 
-    <% end %> 
+    
   
 </div>
 
