@@ -1,12 +1,16 @@
 class CommentsController < ApplicationController
+  def index; end
+
+  def show; end
+
   def new
     @comment = Comment.new
   end
 
   def create
     @comment = Comment.new(body: params[:body])
-    @comment.user = User.first
-    if @comment.save
+    @comment.user = current_user
+    if @comment.create
       redirect_to root_path
     else
       render :new

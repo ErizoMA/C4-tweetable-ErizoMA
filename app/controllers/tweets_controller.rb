@@ -13,7 +13,7 @@ class TweetsController < ApplicationController
 
   def create
     @tweet = Tweet.new(body: params[:body])
-    @tweet.user = User.second
+    @tweet.user = current_user
 
     if @tweet.save
       redirect_to root_path

@@ -16,14 +16,18 @@
 
 .input__container,
 .select__input {
-  border: 1px solid var(--gray-200);
-  padding: 8px 12px;
+  padding: 2px;
   border-radius: 6px;
   display: flex;
   align-items: center;
   gap: 8px;
-  min-width: 256px;
+  min-width:300px;
+  background-color: var(--background);
+}
+
+.input__container--w{
   background-color: white;
+  border: 2px var(--background) solid;
 }
 
 .select__input:hover {
@@ -41,21 +45,22 @@
 .input__content {
   padding: 0;
   margin: 0;
-  border: none;
   width: 100%;
+  border:var(--background-2);
 }
+
 
 .input__content:focus {
   outline: none;
 }
 
 .input__content::placeholder {
-  color: var(--gray-200);
+  color: var(--secundary-text)
 }
 
 .input__container:focus-within {
   box-shadow: var(--shadow-input--primary);
-  border: 1px solid var(--primary-300);
+  border: 1px solid var(--primary);
 }
 
 .input--error .input__container:focus-within {

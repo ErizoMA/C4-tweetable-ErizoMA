@@ -21,7 +21,15 @@
 </div>
 
 <div class="card">
-<p>Create a comment</p>
+  <p>Creando comentario</p>
+  <%= form_with model: @comment, url: { action: "create" } do |form| %>
+    <%= form.text_area :body ,placeholder: "Remember to think before write ..." ,class: "user-form" %>
+    <%= form.submit  "Comment",class: "btn btn--primary btn--fit-content" %>
+  <% end %>
+  <%= form_with url: "/comments_path", method: :post, class: "textarea-container mb-16" do |f| %>
+    <%= f.text_area :body, class: 'input__content input__container', placeholder: 'Remember to thing before write...'%>
+    <%= f.submit "CommentV2", class: "btn btn--primary btn--small width-fit"  %>
+  <% end %>
 </div>
 
 <% @tweet.comments.each do |comment| %>
