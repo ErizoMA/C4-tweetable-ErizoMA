@@ -75,11 +75,11 @@
 }
 
 .btn--secondary {
-  color: white;
-  background-color: var(--secondary-300);
+  color: var(--primary);
+  background-color: var(--background-2);
 }
 .btn--secondary:hover {
-  background-color: var(--secondary-400);
+  background-color: var(--primary);
   color: white;
 }
 .btn--secondary:focus {

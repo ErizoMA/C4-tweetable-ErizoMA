@@ -1,8 +1,8 @@
-<div class="card justify-c">
+<div class="card justify-c l bold p-16">
   <h1>Home</h1>
 </div>
 <%if current_user %>
-  <div class="card">
+  <div class="card mb-12">
     <%= image_tag current_user.avatar ,class: "card-img"%>
     <div class="card-contain">
     <%= form_with model: @tweet, url: { action: "create" } do |form| %>
@@ -24,17 +24,17 @@
     </div>
     <div class="card-contain">
       <div class="card-main">
-        <p>
-          <%= User.all.find_by(id: tweet.user_id).name%> <span>@<%= User.all.find_by(id: tweet.user_id).username%></span>
-              <span><%= time_ago_in_words(tweet.created_at) unless tweet.created_at.blank? %> ago</span>
+        <p class="m bold pt">
+          <%= User.all.find_by(id: tweet.user_id).name%> <span class="reg st">@<%= User.all.find_by(id: tweet.user_id).username%></span>
+              <span class="s reg st"><%= time_ago_in_words(tweet.created_at) unless tweet.created_at.blank? %> ago</span>
         </p>
-        <p><%= tweet.body%></p>
+        <p class="m reg"><%= tweet.body%></p>
       </div>
       <div class="card-footer">
         <div class="card-comments">
           <a href="<%=tweet_path(tweet)%>"><div><%= image_tag('comment.png')%></div></a>
 
-          <p><%= tweet.comments_count%></p>        
+          <p class="s reg st"><%= tweet.comments_count%></p>        
         </div>
         <%if current_user%>
           <%if current_user.id == tweet.user_id%>

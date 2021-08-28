@@ -83,3 +83,16 @@
 .full-width {
   width: 100%;
 }
+
+.pt{
+  color: var(--primary-text);
+}
+.st{
+  color: var(--secondary-text);
+}
+.primary{
+  color: var(--primary);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

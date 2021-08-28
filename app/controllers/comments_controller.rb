@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(body: params[:body])
     @comment.user = current_user
-    if @comment.create
+    if @comment.save
       redirect_to root_path
     else
       render :new

@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card justify-c l bold p-16">
   <h1>Edit Profile</h1>
 </div>
 <div class="card">
@@ -56,10 +56,10 @@
         </div>
       </div>
       <div class="actions">
-        <%= f.submit "Update",class: "btn btn--primary btn--fit-content" %>
+        <%= f.submit "Submit",class: "btn btn--primary btn--fit-content" %>
       </div>
 <% end %> 
-    <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete , class: "btn btn--primary btn--fit-content"%>
+    <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete , class:"primary"%>
    </div> 
     
   
